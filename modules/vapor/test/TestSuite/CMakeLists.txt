@@ -1,0 +1,91 @@
+if(CPPUNIT_FOUND)
+	set(SOURCES
+		main.cpp
+		MySuites.h
+		TestCases/Perf/PerfTest.h
+		TestCases/Perf/Makefile.in
+		TestCases/Perf/PerfTest.cpp
+		TestCases/Perf/ProfileNodeTest.cpp
+		TestCases/Perf/ProfileNodeTest.h
+		TestCases/SystemTest.h
+		TestCases/FileUtilsTest.cpp
+		TestCases/BoostTest.cpp
+		TestCases/DynLoad/LibraryLoaderTest.h
+		TestCases/DynLoad/LibraryTest.cpp
+		TestCases/DynLoad/Makefile.in
+		TestCases/DynLoad/LibraryFinderTest.h
+		TestCases/DynLoad/LibraryFinderTest.cpp
+		TestCases/DynLoad/LibraryTest.h
+		TestCases/DynLoad/modules/LibraryLoaderModule1.c
+		TestCases/DynLoad/modules/TestInterface.h
+		TestCases/DynLoad/modules/c_module.c
+		TestCases/DynLoad/modules/Makefile.in
+		TestCases/DynLoad/modules/DsoLoaderModule2.c
+		TestCases/DynLoad/modules/LibraryLoaderModule2.c
+		TestCases/DynLoad/modules/cxx_module.cpp
+		TestCases/DynLoad/modules/DsoLoaderModule1.c
+		TestCases/DynLoad/LibraryLoaderTest.cpp
+		TestCases/FileUtilsTest.h
+		TestCases/Util/GUIDTest.cpp
+		TestCases/Util/DebugTest.cpp
+		TestCases/Util/IntervalTest.cpp
+		TestCases/Util/FactoryTest.h
+		TestCases/Util/Makefile.in
+		TestCases/Util/ReturnStatusTest.cpp
+		TestCases/Util/AttribMapTest.h
+		TestCases/Util/DebugTest.h
+		TestCases/Util/FactoryTest.cpp
+		TestCases/Util/GUIDTest.h
+		TestCases/Util/ReturnStatusTest.h
+		TestCases/Util/IntervalTest.h
+		TestCases/Util/AttribMapTest.cpp
+		TestCases/Makefile.in
+		TestCases/BoostTest.h
+		TestCases/Socket/SocketCopyConstructorTest.cpp
+		TestCases/Socket/SocketConnectorAcceptorTest.h
+		TestCases/Socket/SocketConnectorAcceptorTest.cpp
+		TestCases/Socket/Makefile.in
+		TestCases/Socket/SocketTest.cpp
+		TestCases/Socket/SocketCopyConstructorTest.h
+		TestCases/Socket/NonBlockingSocketsTest.cpp
+		TestCases/Socket/SocketTest.h
+		TestCases/Socket/NonBlockingSocketsTest.h
+		TestCases/SystemTest.cpp
+		TestCases/Thread/SignalTest.h
+		TestCases/Thread/ThreadTest.cpp
+		TestCases/Thread/Makefile.in
+		TestCases/Thread/ThreadTest.h
+		TestCases/Thread/SignalTest.cpp
+		TestCases/IO/SelectorTest.h
+		TestCases/IO/SerializableTest.cpp
+		TestCases/IO/Makefile.in
+		TestCases/IO/Stats/SocketBandwidthIOStatsTest.cpp
+		TestCases/IO/Stats/Makefile.in
+		TestCases/IO/Stats/SocketBandwidthIOStatsTest.h
+		TestCases/IO/XMLReaderWriterTest.h
+		TestCases/IO/SerializableTest.h
+		TestCases/IO/XMLReaderWriterTest.cpp
+		TestCases/IO/Port/SerialPortTest.cpp
+		TestCases/IO/Port/SerialPortTest.h
+		TestCases/IO/Port/Makefile.in
+		TestCases/IO/Socket/SimpleAllocationStrategiesTest.h
+		TestCases/IO/Socket/NoPushWriterTest.h
+		TestCases/IO/Socket/MaximumAllocationStrategyTest.cpp
+		TestCases/IO/Socket/SimpleAllocationStrategiesTest.cpp
+		TestCases/IO/Socket/Makefile.in
+		TestCases/IO/Socket/InetAddrTest.cpp
+		TestCases/IO/Socket/MaximumAllocationStrategyTest.h
+		TestCases/IO/Socket/InetAddrTest.h
+		TestCases/IO/Socket/AveragingAllocationStrategyTest.cpp
+		TestCases/IO/Socket/AveragingAllocationStrategyTest.h
+		TestCases/IO/Socket/NoPushWriterTest.cpp
+		TestCases/IO/SelectorTest.cpp)
+	include_directories(. ${CPPUNIT_INCLUDE_DIRS})
+	add_definitions(-DNO_CPPUNIT_METRICREGISTRY)
+	add_executable(vpr_testsuite_runner ${SOURCES})
+	target_link_libraries(vpr_testsuite_runner vpr ${CPPUNIT_LIBRARIES})
+	set_target_properties(vpr_testsuite_runner PROPERTIES FOLDER "VPR tests")
+	add_test(NAME VPR-testsuite-noninteractive
+		COMMAND
+		${CMAKE_COMMAND} -E chdir "${CMAKE_CURRENT_SOURCE_DIR}" "$<TARGET_FILE:vpr_testsuite_runner>")
+endif()

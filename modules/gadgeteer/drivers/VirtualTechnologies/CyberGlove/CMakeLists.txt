@@ -1,0 +1,25 @@
+gadgeteer_add_driver(CyberGlove
+	CyberGloveBasic.cpp
+	CyberGloveBasic.h
+	CyberGlove.cpp
+	CyberGlove.h
+	vt_error.cpp
+	vt_error.h
+	vt_globals.h
+	vt_glove.cpp
+	vt_glove-types.h
+	vt_init.cpp
+	vt_init.h
+	vt_math3d.cpp
+	vt_math3d.h
+	vt_read_hand_model.cpp
+	vt_read_hand_model-types.h
+	vt_read_object.cpp
+	vt_read_object-types.h
+	vt_read_user_cal.cpp
+	vt_read_user_cal-types.h
+	vt_serial_io.cpp
+	vt_types.h
+	vt_virtual_hand.cpp
+	vt_virtual_hand-types.h)
+

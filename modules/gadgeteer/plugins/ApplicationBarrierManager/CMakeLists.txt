@@ -1,0 +1,9 @@
+gadgeteer_add_plugin(ApplicationBarrierManager
+	ApplicationBarrier.h
+	ApplicationBarrierManager.cpp
+	ApplicationBarrierManager.h
+	application_barrier_manager.rc
+	ApplicationBarrierServer.cpp
+	ApplicationBarrierServer.h
+	ApplicationBarrierServerPtr.h)
+

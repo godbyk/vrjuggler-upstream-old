@@ -1,0 +1,1 @@
+gadgeteer_add_driver(SdlJoystick SdlJoystick.cpp SdlRumbleEffect.cpp SdlRumbleEffectConstant.cpp SdlRumbleEffectPeriodic.cpp SdlRumbleEffectRamp.cpp)

@@ -1,0 +1,14 @@
+/* Define if Cocoa will be used */
+#cmakedefine GADGET_USE_COCOA @GADGET_USE_COCOA@
+
+/* Define if full package versioning capabilities are enabled */
+#cmakedefine GADGET_USE_VERSIONING @GADGET_USE_VERSIONING@
+
+/* Define if the X Window System will be used */
+#cmakedefine GADGET_USE_X11 @GADGET_USE_X11@
+
+/* Gadgeteer version string */
+#cmakedefine GADGET_VERSION_DOT "@GADGET_VERSION_DOT@"
+
+/* Library directory */
+#define GADGET_LIBDIR "@CMAKE_INSTALL_LIBDIR@"

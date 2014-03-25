@@ -1,0 +1,19 @@
+
+/* Define to 1 if you have the <ext/functional> header file. */
+#cmakedefine HAVE_EXT_FUNCTIONAL @HAVE_EXT_FUNCTIONAL@
+
+/* Define if Cocoa will be used. */
+#cmakedefine VRJ_USE_COCOA @VRJ_USE_COCOA@
+
+/* Define if full package versioning capabilities are enabled */
+#cmakedefine VRJ_USE_VERSIONING @VRJ_USE_VERSIONING@
+
+/* Define if the X Window System will be used. */
+#cmakedefine VRJ_USE_X11 @VRJ_USE_X11@
+
+/* VR Juggler version string */
+#cmakedefine VRJ_VERSION_DOT "@VRJ_VERSION_DOT@"
+
+/* Library directory */
+#define VRJ_LIBDIR "@CMAKE_INSTALL_LIBDIR@"
+

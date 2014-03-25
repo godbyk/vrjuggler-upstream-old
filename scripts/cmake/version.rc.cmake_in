@@ -1,0 +1,7 @@
+// Generated file included by module rc file
+
+#pragma once
+#define VERSION_NUM @MAJOR_VER_NUMBER@,@MINOR_VER_NUMBER@,@PATCH_VER_NUMBER@,1
+#define VERSION_STR "@MAJOR_VER_NUMBER@.@MINOR_VER_NUMBER@.@PATCH_VER_NUMBER@.1"
+#define COPYRIGHT_STR "Copyright 1998-2011"
+

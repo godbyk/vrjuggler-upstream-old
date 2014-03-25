@@ -70,7 +70,7 @@
 #  include <vrj/Kernel/CocoaWrapper.h>
 #endif
 
-// This is included here to avoid conflicts with boost/signal.hpp (included as
+// This is included here to avoid conflicts with boost/signals2/signal.hpp (included as
 // a result of including vpr/Thread/Thread.h).
 #include <boost/bind/apply.hpp>
 

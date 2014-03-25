@@ -32,7 +32,7 @@
 #include <vector>
 #include <boost/concept_check.hpp>   /* for ignore_unused_variable_warning */
 #include <boost/noncopyable.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2/signal.hpp>
 
 #include <cppdom/cppdom.h>
 

@@ -19,7 +19,7 @@
 #ifndef _VPR_SIGNAL_PROXY_H_
 #define _VPR_SIGNAL_PROXY_H_
 
-#include <boost/signals/connection.hpp>
+#include <boost/signals2/connection.hpp>
 
 
 namespace vpr
@@ -27,9 +27,9 @@ namespace vpr
 
 /** \class SignalProxy SignalProxy.h vpr/Util/SignalProxy.h
  *
- * Simple proxy for \c boost::signal<> instances that exposes only the
+ * Simple proxy for \c boost::signals2::signal<> instances that exposes only the
  * connect() member function. This allows for a (somewhat) cleaner interface
- * to accessing a \c boost::signal<> instance that is a class data member
+ * to accessing a \c boost::signals2::signal<> instance that is a class data member
  * without making that data member public. It is intended to be used for cases
  * when external classes need to connect a slot to a signal but the emitting
  * of the signal can only be performed by the holding class implementation.
@@ -62,7 +62,7 @@ public:
       /* Do nothing. */ ;
    }
 
-   boost::signals::connection connect(typename signal_t::slot_type slot)
+   boost::signals2::connection connect(typename signal_t::slot_type slot)
    {
       return mSignal.connect(slot);
    }
@@ -76,7 +76,7 @@ public:
     *
     * @since 0.26.1
     */
-   boost::signals::connection
+   boost::signals2::connection
    connect(const typename signal_t::group_type& group,
            typename signal_t::slot_type slot)
    {

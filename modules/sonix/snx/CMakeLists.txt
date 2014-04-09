@@ -30,7 +30,6 @@ if(MSVC)
 	list(APPEND SOURCES ../sonix.rc)
 endif()
 
-
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/snxParam.h.in" "${CMAKE_CURRENT_BINARY_DIR}/snxParam.h")
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/snxDefines.h.cmake_in" "${CMAKE_CURRENT_BINARY_DIR}/snxDefines.h")
 vrjugglersuite_create_version_rc()

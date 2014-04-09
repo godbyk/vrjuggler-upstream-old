@@ -82,6 +82,14 @@ endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ${BUILD_WITH_PROJECT_FOLDERS})
 
+foreach(_buildtype RELEASE RELWITHDEBINFO MINSIZEREL)
+	set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS_${_buildtype} JUGGLER_OPT)
+endforeach()
+set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS_DEBUG JUGGLER_DEBUG)
+if(NOT CMAKE_BUILD_TYPE)
+	set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS JUGGLER_OPT)
+endif()
+
 set(VRJUGGLERSUITE_CORELIB_PROJECT_FOLDER "Core VR Juggler libraries")
 set(VRJUGGLERSUITE_META_PROJECT_FOLDER "Convenience targets")
 
@@ -178,3 +186,14 @@ function(vrjugglersuite_copy_and_install _varname _dest _component)
 	endforeach()
 	set(${_varname} ${${_varname}} PARENT_SCOPE)
 endfunction()
+
+# For each variable, add it to the compiler definitions if and only if it's set to true.
+# _varnames: list of variable names to check
+function(maybe_add_definitions _varnames)
+	foreach(_varname ${ARGV})
+		if(${_varname})
+			add_definitions(-D${_varname})
+		endif()
+	endforeach()
+endfunction()
+

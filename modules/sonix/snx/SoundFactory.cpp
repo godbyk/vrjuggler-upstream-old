@@ -106,7 +106,9 @@ SoundFactory::SoundFactory()
 #endif
       );
 
-#if defined(VPR_OS_IRIX) && defined(_ABIN32)
+#if defined(SNX_LIBDIR)
+      const fs::path snx_lib_dir = snx_base_dir / SNX_LIBDIR;
+#elif defined(VPR_OS_IRIX) && defined(_ABIN32)
       const fs::path snx_lib_dir = snx_base_dir / "lib32";
 #elif defined(VPR_OS_IRIX) && defined(_ABI64) || \
       defined(VPR_OS_Linux) && defined(__x86_64__)
